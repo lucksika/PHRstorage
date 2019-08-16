@@ -1,0 +1,40 @@
+{
+  "11111_appid_2017-10-02_time": { // time = time when add to database
+    "results": {
+      "pre_hr": "72",
+      "pre_bp": "110/70",
+      "post_hr": "112",
+      "post_bp": "130/85",
+      "step": "36", // number of step
+      "distance": "10", // distance in meters
+      "assistant": "1", // number of assistant
+      "borg_scale": "1", // 2 of 5
+      "start_time": "Mon Sep 11 2017 08:10:00 GMT+0700 (SE Asia Standard Time)", // Date()
+      "stop_time": "Mon Sep 11 2017 08:15:00 GMT+0700 (SE Asia Standard Time)", // Date()
+      "duration": "300000", // time in ms
+      "note": "Hello Phase 2!",
+      "timestamp": ""
+    },
+    "date": "2017-10-02",
+    "time": "08:15:00" // HH:MM:SS = time when add to database (stop_time)
+  },
+  "11111_appid_date_time": { // time = time when add to database
+    "results": {
+      "pre_hr": "77",
+      "pre_bp": "104/73",
+      "post_hr": "106",
+      "post_bp": "119/95",
+      "step": "39", // number of step
+      "distance": "12", // distance in meters
+      "assistant": "1", // number of assistant
+      "borg_scale": "2", // 2 of 5
+      "start_time": "Mon Sep 11 2017 14:01:00 GMT+0700 (SE Asia Standard Time)", // Date()
+      "stop_time": "Mon Sep 11 2017 14:05:00 GMT+0700 (SE Asia Standard Time)", // Date()
+      "duration": "240000", // time in ms
+      "note": "I'm superman!",
+      "timestamp": ""
+    },
+    "date": "2017-10-04",
+    "time": "14:05:00" // HH:MM:SS = time when add to database (stop_time)
+  }
+}

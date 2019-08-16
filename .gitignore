@@ -1,12 +1,2 @@
-# Compiled file
-*.pyc
-
-# Library
-/lib
-/include
-
-# Binary
-/bin
-
-# .Python
-.Python
+bin
+lib

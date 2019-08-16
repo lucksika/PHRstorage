@@ -1,0 +1,26 @@
+{
+  "HOSPITAL0001": {
+    "name": "PSU Hospital",
+    "type": "Hospital University",
+    "sub_district": "Koh Hong",
+    "district": "Hat Yai",
+    "province": "Songkhla",
+    "phone": "0811111111"
+  },
+  "HOSPITAL0002": {
+    "name": "PSU Hospital 2",
+    "type": "Hospital University",
+    "sub_district": "Koh Hong",
+    "district": "Hat Yai",
+    "province": "Songkhla",
+    "phone": "0822222222"
+  },
+  "HOSPITAL0003": {
+    "name": "PSU Hospital 3",
+    "type": "Hospital University",
+    "sub_district": "Koh Hong",
+    "district": "Hat Yai",
+    "province": "Songkhla",
+    "phone": "083333333"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  // Table profile (for moving data from Firebase database)
+  // noted that inserting data into database(hadoop) is a bit different way from this <= use P'joii's API
+  "profile": {
+    "userid_appid": {
+      "patient_code": "PATIENT5710110366",
+      "role": "patient",
+      "firstname": "Manusaporn",
+      "lastname": "Treerungroj",
+      "gender": "Female", // 'Male' or 'Female'
+      "birthday": "1996-08-01", // YYYY-MM-DD
+      "weight": "52",
+      "height": "161",
+      "blood_type": "B",
+      "address": "Prince of Songkla University, Songkhla",
+      "phone": "0888888888",
+      "kin_phone": "0899999999",
+      "medical_condition": [], // list - able to contain more than 1
+      "current_medicine": [],
+      "allergic_food": [],
+      "allergic_medicine": []
+    },
+    "userid2_appid": {
+      "role": "doctor", // 'doctor' or 'nurse'
+      "firstname": "John",
+      "lastname": "Doe",
+      "hospital_id": "HOSPITAL0001",
+      "phone": "0877777777"
+    }
+  },
+  // ###
+  // ###
+  // ###
+  // Table appointment (for moving data from Firebase database)
+  // noted that inserting data into database(hadoop) is a bit different way from this <= use P'joii's API
+  "appointment": {
+    "userid_appid_date": { // date format = YYYY-MM-DD
+      "description": {
+        "title": "Meeting doctor",
+        "place": "PSU Hospital",
+        "note": "..."
+      },
+      "date": "2018-12-31", // YYYY-MM-DD
+      "time": "23:59:00" // HH:MM:SS
+    }
+  },
+  // ###
+  // ###
+  // ###
+  // Table hospital
+  "hospital": {
+    "hospitalid": {
+      "name": "PSU Hospital",
+      "type": "Hospital University",
+      "sub_district": "Koh Hong",
+      "district": "Hat Yai",
+      "province": "Songkhla",
+      "phone": "0811111111"
+    }
+  },
+  /*
+    To add hospital information into database(hadoop), wrap all data to json format like below.
+  {
+    "hospitalid": "HOSPITAL0001",
+    "information": {
+      "name": "PSU Hospital",
+      "type": "Hospital University",
+      "sub_district": "Koh Hong",
+      "district": "Hat Yai",
+      "province": "Songkhla",
+      "phone": "0811111111"
+    }
+  }
+    and post that json via /hospital/info with POST method.
+    @app.route('/hospital/info', methods=['GET', 'POST'])
+  */
+  // ###
+  // ###
+  // ###
+  // Table surgery
+  "surgery": {
+    "userid_hospitalid_date_time": {
+      "date": "2017-12-31", // YYYY-MM-DD
+      "time": "23:59:00", // HH:MM
+      "type": "Coronary Artery Bypass Graft Surgery",
+      "hospital": "hospital_id", // hospital's id
+      "doctor": "John Doe",
+      "note": "..."
+    }
+  },
+  /*
+    To add surgery information into database(hadoop), wrap all data to json format like below.
+  {
+    "userid": "11111",
+    "hospitalid": "HOSPITAL0001",
+    "date": "2017-12-31",
+    "time": "23:59:00",
+    "information": {
+      "date": "2017-12-31",
+      "time": "23:59:00",
+      "type": "Coronary Artery Bypass Graft Surgery",
+      "hospital": "hospital_id",
+      "doctor": "John Doe",
+      "note": "..."
+    }
+  }
+    and post that json via /surgery/info with POST method.
+    @app.route('/surgery/info', methods=['GET', 'POST'])
+  */
+  // ###
+  // ###
+  // ###
+  // Table activity_result_1
+  "activity_result_1": {
+    "userid_appid_date_time": { // time = time when add to database
+      "results": {
+        "recorder": "nurse_id", // nurse's userid
+        "pre_hr": "72",
+        "pre_bp": "110/70",
+        "post_hr": "112",
+        "post_bp": "130/85",
+        "max_level": "9", // 9 of 10
+        "assistant": "2", // number of assistant
+        "start_time": "Mon Sep 11 2017 18:14:28 GMT+0700 (SE Asia Standard Time)", // Date()
+        "stop_time": "Mon Sep 11 2017 18:15:28 GMT+0700 (SE Asia Standard Time)", // Date()
+        "duration": "60000", // time in ms
+        "note": "This is amazing!",
+        "timestamp": ""
+      },
+      "date": "2017-09-11",
+      "time": "18:15:28" // HH:MM:SS = time when add to database (stop_time)
+    }
+  },
+  /*
+    To add activity result 1 into database(hadoop), wrap all data to json format like below.
+  {
+    "userid": "11111",
+    "appid": "appid",
+    "results": {
+      "recorder": "99999",
+      "pre_hr": 72,
+      "pre_bp": "110/70",
+      "post_hr": 112,
+      "post_bp": "130/85",
+      "max_level": 9,
+      "assistant": 2,
+      "start_time": "Mon Sep 11 2017 18:15:28 GMT+0700 (SE Asia Standard Time)",
+      "stop_time": "Mon Sep 11 2017 18:23:28 GMT+0700 (SE Asia Standard Time)",
+      "duration": 2000,
+      "note": "This is amazing!",
+      "timestamp": ""
+    },
+    "date": "2017-09-11",
+    "time": "18:15:28"
+  }
+    and post that json via /activity_result/1 with POST method.
+    @app.route('/activity_result/1', methods=['GET', 'POST'])
+  */
+  "activity_result_2": {
+    "userid_appid_date_time": { // time = time when add to database
+      "results": {
+        "pre_hr": "72",
+        "pre_bp": "110/70",
+        "post_hr": "112",
+        "post_bp": "130/85",
+        "step": "25", // number of step
+        "distance": "10", // distance in meters
+        "assistant": "2", // number of assistant
+        "borg_scale": "2", // 2 of 5
+        "start_time": "Mon Sep 11 2017 18:14:28 GMT+0700 (SE Asia Standard Time)", // Date()
+        "stop_time": "Mon Sep 11 2017 18:15:28 GMT+0700 (SE Asia Standard Time)", // Date()
+        "duration": "60000", // time in ms
+        "note": "This is amazing!",
+        "timestamp": ""
+      },
+      "date": "2017-09-11",
+      "time": "18:15:28" // HH:MM:SS = time when add to database (stop_time)
+    }
+  }
+  /* 
+    To add activity result 2 into database(hadoop), wrap all data to json format like below.
+  {
+    "userid": "11111",
+    "appid": "appid",
+    "results": {
+      "pre_hr": "72",
+      "pre_bp": "110/70",
+      "post_hr": "112",
+      "post_bp": "130/85",
+      "step": "25", // number of step
+      "distance": "10", // distance in meters
+      "assistant": "2", // number of assistant
+      "borg_scale": "2", // 2 of 5
+      "start_time": "Mon Sep 11 2017 18:14:28 GMT+0700 (SE Asia Standard Time)", // Date()
+      "stop_time": "Mon Sep 11 2017 18:15:28 GMT+0700 (SE Asia Standard Time)", // Date()
+      "duration": "60000", // time in ms
+      "note": "This is amazing!",
+      "timestamp": ""
+    },
+    "date": "2017-09-11",
+    "time": "18:15:28"
+  }
+    and post that json via /activity_result/2 with POST method.
+    @app.route('/activity_result/2', methods=['GET', 'POST'])
+  */
+}

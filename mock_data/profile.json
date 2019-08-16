@@ -1,0 +1,27 @@
+{
+  "11111_appid": {
+    "patient_code": "PATIENT5710110366",
+    "role": "patient",
+    "firstname": "Manusaporn",
+    "lastname": "Treerungroj",
+    "gender": "Female",
+    "birthday": "1996-08-01",
+    "weight": "52",
+    "height": "161",
+    "blood_type": "B",
+    "address": "Prince of Songkla University, Songkhla",
+    "phone": "0888888888",
+    "kin_phone": "0899999999",
+    "medical_condition": [],
+    "current_medicine": [],
+    "allergic_food": [],
+    "allergic_medicine": []
+  },
+  "22222_appid": {
+    "role": "doctor",
+    "firstname": "John",
+    "lastname": "Doe",
+    "hospital_id": "HOSPITAL0001",
+    "phone": "0877777777"
+  }
+}
